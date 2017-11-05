@@ -91,6 +91,10 @@ class SwipeableViews extends Component {
      */
     resistance: PropTypes.bool,
     /**
+     * Passed to ScrollView.
+     */
+    scrollEnabled: PropTypes.bool,
+    /**
      * This is the inlined style that will be applied
      * on the slide component.
      */
@@ -107,6 +111,7 @@ class SwipeableViews extends Component {
     disabled: false,
     index: 0,
     resistance: false,
+    scrollEnabled: false,
   };
 
   state = {};
@@ -219,6 +224,7 @@ class SwipeableViews extends Component {
       containerStyle,
       disabled,
       onTransitionEnd, // eslint-disable-line no-unused-vars
+      scrollEnabled,
       ...other
     } = this.props;
 
@@ -254,6 +260,7 @@ We are expecting a valid React Element`,
           }}
           horizontal
           pagingEnabled
+          scrollEnabled={scrollEnabled}
           automaticallyAdjustContentInsets={false}
           scrollsToTop={false}
           bounces={resistance}
